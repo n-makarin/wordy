@@ -35,8 +35,8 @@ class Auth {
     const userFromCookies = app.$cookies.get(cookies.authUser.name)
     if (userFromCookies) {
       store.commit('auth/SET_USER', userFromCookies)
-      this.authorized = userFromCookies
-      // store.dispatch('auth/prolongAuth', userFromCookies)
+      this.authorized = true
+      store.dispatch('auth/prolongAuth', userFromCookies)
     }
   }
   /**
