@@ -12,7 +12,8 @@
     "/word_set/detail/:id": "/word_set/:id"
   },
   "description": [
-    "Login via user_id and password. If successful, returns object with user's data",
+    "Login via login and password. If successful, returns object with user's data",
+    "Login via email and password. If successful, returns object with user's data",
 
     "User list",
     "User profile detail info by user_id",
