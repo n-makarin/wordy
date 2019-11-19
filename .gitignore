@@ -88,3 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Json-sever database
+json-server/db.json
