@@ -1,13 +1,23 @@
 <template>
   <header class="header">
-    <nuxt-link to="login">
-      login
-    </nuxt-link>
-    <nuxt-link to="register">
-      register
-    </nuxt-link>
+    <auth :authorized="authorized" />
   </header>
 </template>
+
+<script>
+import Auth from '~/components/layout/header/auth'
+
+export default {
+  components: {
+    Auth
+  },
+  computed: {
+    authorized () {
+      return this.$store.getters['auth/authorized']
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 
