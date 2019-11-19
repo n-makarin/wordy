@@ -15,6 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/style-resources": "^1.0.0",
+    "cookie-universal-nuxt": "^2.0.19",
     "json-server": "^0.15.1",
     "nuxt": "^2.0.0"
   },
