@@ -1,6 +1,8 @@
+import { cookies } from '~/utils/cookies/config.js'
+
 export const state = () => ({
-  user: null,
-  authorized: false
+  authorized: false,
+  user: null
 })
 
 export const mutations = {
@@ -10,9 +12,13 @@ export const mutations = {
 }
 
 export const actions = {
+  logout ({ commit }) {
+    commit('SET_USER', null)
+    this.app.$cookies.remove(cookies.authUser.name)
+  }
 }
 
 export const getters = {
-  user: state => state.user,
-  authorized: state => state.authorized
+  authorized: state => state.authorized,
+  user: state => state.user
 }
