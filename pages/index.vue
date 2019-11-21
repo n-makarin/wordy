@@ -15,11 +15,8 @@ export default {
     Home
   },
   computed: {
-  },
-  asyncData (context) {
-    const authorized = context.store.getters['auth/authorized']
-    return {
-      authorized
+    authorized () {
+      return this.$store.getters['auth/authorized']
     }
   }
 }
