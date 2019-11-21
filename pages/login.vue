@@ -4,7 +4,7 @@
     <form-default
       :field-list="form.fieldList"
       :button-list="form.buttonList"
-      @update="update"
+      @update="updateFieldList"
       @submit="submit"
     />
   </div>
@@ -60,7 +60,7 @@ export default {
   asyncData (context) {
   },
   methods: {
-    update (fieldList) {
+    updateFieldList (fieldList) {
       this.form.fieldList = fieldList
     },
     async submit () {
