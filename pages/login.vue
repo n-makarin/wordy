@@ -63,9 +63,12 @@ export default {
     update (fieldList) {
       this.form.fieldList = fieldList
     },
-    submit () {
-      console.log(this.form.fieldList)
-      console.log('submitted')
+    async submit () {
+      const login = this.form.fieldList[0].value
+      const password = this.form.fieldList[1].value
+      await this.$store.dispatch('auth/login', { login, password })
+      if (!this.$store.getters['auth/authorized']) { return }
+      this.$router.push('/')
     }
   }
 }
