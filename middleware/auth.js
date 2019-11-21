@@ -19,12 +19,12 @@ class Auth {
    * Init authorization
    * @returns redirection|void
    */
-  init ({ store, app }) {
+  init ({ store, app, redirect }) {
     if (!this.authorized) {
       this.setUserFromCookies({ store, app })
     }
-    this.redirectTo(this.path.login)
-    this.redirectTo(this.path.home)
+    this.redirectTo(redirect, this.path.login)
+    this.redirectTo(redirect, this.path.home)
   }
 
   /**
@@ -35,16 +35,17 @@ class Auth {
     const userFromCookies = app.$cookies.get(cookies.authUser.name)
     if (userFromCookies) {
       store.commit('auth/SET_USER', userFromCookies)
-      this.authorized = true
       store.dispatch('auth/prolongAuth', userFromCookies)
+      this.authorized = true
     }
   }
   /**
    * Redirect to specified path if this is required
+   * @param {function} path Redirection path
    * @param {string} path Redirection path
    * @returns redirection|void
    */
-  redirectTo ({ redirect }, path) {
+  redirectTo (redirect, path) {
     if (!this.needRedirectTo(path)) { return }
     return redirect(path)
   }
@@ -68,19 +69,24 @@ class Auth {
   needRedirectToLogin () {
     if (!this.authorized &&
       this.path.target !== this.path.login &&
-      this.path.target !== this.path.register) {
+      this.path.target !== this.path.register &&
+      this.path.target !== this.path.home) {
       return true
     }
+
+    return false
   }
   /**
    * Is it necessary to redirect to home path
    * @returns boolean
    */
   needRedirectToHome () {
+    // redirect to home page from login or register if authorized
     if (this.authorized &&
       (this.path.target === this.path.login ||
       this.path.target === this.path.register)) {
       return true
     }
+    return false
   }
 }
