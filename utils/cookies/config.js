@@ -6,5 +6,9 @@ export const cookies = {
   authUser: {
     name: 'authUser',
     maxAge: maxAge.month
+  },
+  locale: {
+    name: 'locale',
+    maxAge: maxAge.month
   }
 }
