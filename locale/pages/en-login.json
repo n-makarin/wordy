@@ -1,6 +1,7 @@
 {
   "login": "login",
   "logout": "logout",
+  "email": "email",
   "password": "password",
   "username or email address": "username or email address",
   "submit": "submit"

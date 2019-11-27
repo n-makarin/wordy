@@ -1,6 +1,7 @@
 {
   "login": "войти",
   "logout": "выйти",
+  "email": "email",
   "password": "пароль",
   "username or email address": "имя пользователя или email",
   "submit": "отправить"
