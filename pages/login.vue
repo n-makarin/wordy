@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1>Login</h1>
+    <h1>{{ $t('login') }}</h1>
     <form-default
       :field-list="form.fieldList"
       :button-list="form.buttonList"

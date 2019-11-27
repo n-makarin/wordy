@@ -35,19 +35,23 @@ export default {
   },
   data () {
     return {
-      linkList: [
+      logoutTitle: 'logout'
+    }
+  },
+  computed: {
+    linkList () {
+      return [
         {
           id: 'login',
-          title: 'login',
+          title: this.$t('login'),
           path: 'login'
         },
         {
           id: 'register',
-          title: 'register',
+          title: this.$t('register'),
           path: 'register'
         }
-      ],
-      logoutTitle: 'logout'
+      ]
     }
   },
   methods: {
