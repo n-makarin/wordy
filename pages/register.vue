@@ -1,6 +1,6 @@
 <template>
   <div class="register">
-    <h1>Register</h1>
+    <h1>{{ $t('register') }}</h1>
     <form-default
       :field-list="form.fieldList"
       :button-list="form.buttonList"
@@ -20,12 +20,17 @@ export default {
   },
   data () {
     return {
-      form: {
+
+    }
+  },
+  computed: {
+    form () {
+      return {
         fieldList: [
           {
             id: 'login',
             value: '',
-            label: 'Login',
+            label: this.$t('login'),
             field: 'input',
             type: 'text',
             required: true,
@@ -37,7 +42,7 @@ export default {
           {
             id: 'email',
             value: '',
-            label: 'Email',
+            label: this.$t('email'),
             field: 'input',
             type: 'text',
             required: true,
@@ -49,7 +54,7 @@ export default {
           {
             id: 'password',
             value: '',
-            label: 'Password',
+            label: this.$t('password'),
             field: 'input',
             type: 'password',
             required: true,
@@ -62,13 +67,11 @@ export default {
         buttonList: [
           {
             id: 'save',
-            value: 'save'
+            value: this.$t('save')
           }
         ]
       }
     }
-  },
-  computed: {
   },
   asyncData (context) {
   },

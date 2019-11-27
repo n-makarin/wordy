@@ -35,10 +35,12 @@ export default {
   },
   data () {
     return {
-      logoutTitle: 'logout'
     }
   },
   computed: {
+    logoutTitle () {
+      return this.$t('logout')
+    },
     linkList () {
       return [
         {

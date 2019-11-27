@@ -19,12 +19,16 @@ export default {
   },
   data () {
     return {
-      form: {
+    }
+  },
+  computed: {
+    form () {
+      return {
         fieldList: [
           {
             id: 'login',
             value: '',
-            label: 'Username or email address',
+            label: this.$t('username or email address'),
             field: 'input',
             type: 'text',
             required: true,
@@ -36,7 +40,7 @@ export default {
           {
             id: 'password',
             value: '',
-            label: 'Password',
+            label: this.$t('password'),
             field: 'input',
             type: 'password',
             required: true,
@@ -49,13 +53,11 @@ export default {
         buttonList: [
           {
             id: 'submit',
-            value: 'submit'
+            value: this.$t('submit')
           }
         ]
       }
     }
-  },
-  computed: {
   },
   asyncData (context) {
   },
