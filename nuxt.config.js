@@ -15,6 +15,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  router: {
+    middleware: 'i18n'
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -29,7 +32,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/send-request.client.js'
+    '~/plugins/send-request.client.js',
+    '~plugins/vendor/i18n.js'
   ],
   /*
   ** Nuxt.js dev-modules
