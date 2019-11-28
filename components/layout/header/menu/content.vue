@@ -8,10 +8,6 @@
 
 export default {
   props: {
-    // headerHeight: {
-    //   type: Number,
-    //   default: 0
-    // }
   },
   data () {
     return {
@@ -26,7 +22,6 @@ export default {
     }
   },
   beforeMount () {
-    debugger
     this.headerHeight = this.$parent.$parent.$el.offsetHeight
   },
   methods: {
