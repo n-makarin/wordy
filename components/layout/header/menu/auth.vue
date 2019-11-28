@@ -25,19 +25,14 @@
 <script>
 
 export default {
-  components: {
-  },
-  props: {
-    authorized: {
-      type: Boolean,
-      required: true
-    }
-  },
   data () {
     return {
     }
   },
   computed: {
+    authorized () {
+      return this.$store.getters['auth/authorized']
+    },
     logoutTitle () {
       return this.$t('logout')
     },
