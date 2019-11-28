@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Greeting from '~/components/layout/greeting'
-import Home from '~/components/layout/home'
+import Greeting from '~/components/pages/index/greeting'
+import Home from '~/components/pages/index/home'
 
 export default {
   components: {

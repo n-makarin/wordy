@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Auth from '~/components/layout/header/menu/auth'
+import Auth from '~/components/auth'
 import Locale from '~/components/layout/header/menu/locale'
 
 export default {

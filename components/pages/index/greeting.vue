@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Auth from '~/components/layout/header/menu/auth'
+import Auth from '~/components/auth'
 
 export default {
   components: {
