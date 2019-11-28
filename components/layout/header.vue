@@ -23,5 +23,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.header {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(197, 197, 197);
+  padding: 5px 0;
+}
 </style>
