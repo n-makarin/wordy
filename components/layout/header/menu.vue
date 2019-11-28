@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
-    <icon-trigger />
-    <Content>
+    <icon-trigger v-model="opened" @change="opened = !opened" />
+    <Content v-if="opened">
       <link-list />
       <locale />
       <auth />
