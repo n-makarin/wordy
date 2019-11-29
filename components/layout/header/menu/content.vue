@@ -8,21 +8,23 @@
 
 export default {
   props: {
+    offsetTop: {
+      type: Number,
+      default: 0
+    }
   },
   data () {
     return {
-      headerHeight: 0
+      headerHeight: 0,
+      offsetTopLocal: 0
     }
   },
   computed: {
     styleList () {
       return {
-        top: this.headerHeight + 'px'
+        top: this.offsetTop + 'px'
       }
     }
-  },
-  beforeMount () {
-    this.headerHeight = this.$parent.$parent.$el.offsetHeight
   },
   methods: {
   }

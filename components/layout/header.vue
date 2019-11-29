@@ -1,7 +1,7 @@
 <template>
-  <header class="header">
+  <header ref="container" class="header">
     <logo />
-    <Menu v-if="authorized" />
+    <Menu v-if="authorized" :offset-top="containerHeight" />
   </header>
 </template>
 
@@ -15,10 +15,18 @@ export default {
     Logo,
     Menu
   },
+  data () {
+    return {
+      containerHeight: 0
+    }
+  },
   computed: {
     authorized () {
       return this.$store.getters['auth/authorized']
     }
+  },
+  mounted () {
+    this.containerHeight = this.$refs.container.offsetHeight
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <icon-trigger v-model="opened" @change="opened = !opened" />
-    <Content v-if="opened">
+    <Content v-if="opened" :offset-top="offsetTop">
       <link-list />
       <locale />
       <auth />
@@ -26,6 +26,12 @@ export default {
     Auth,
     Locale,
     Overlay
+  },
+  props: {
+    offsetTop: {
+      type: Number,
+      default: 0
+    }
   },
   data () {
     return {
