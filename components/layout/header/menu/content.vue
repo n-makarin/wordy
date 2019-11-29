@@ -1,12 +1,18 @@
 <template>
-  <div :style="styleList" class="content">
+  <div
+    v-on-clickaway="close"
+    :style="styleList"
+    class="content"
+  >
     <slot />
   </div>
 </template>
 
 <script>
+import { mixin as clickaway } from 'vue-clickaway'
 
 export default {
+  mixins: [ clickaway ],
   props: {
     offsetTop: {
       type: Number,
@@ -27,6 +33,9 @@ export default {
     }
   },
   methods: {
+    close () {
+      this.$emit('close')
+    }
   }
 }
 </script>

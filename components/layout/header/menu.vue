@@ -1,7 +1,11 @@
 <template>
   <div class="menu">
     <icon-trigger v-model="opened" @change="opened = !opened" />
-    <Content v-if="opened" :offset-top="offsetTop">
+    <Content
+      v-if="opened"
+      :offset-top="offsetTop"
+      @close="opened = false"
+    >
       <link-list />
       <locale />
       <auth />

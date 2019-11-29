@@ -41,9 +41,13 @@ export default {
 .overlay {
   position: fixed;
   left: 0;
+  display: none;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.377);
   z-index: 1000;
+  &_visible {
+    display: block;
+  }
 }
 </style>
