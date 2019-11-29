@@ -41,4 +41,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.link-list {
+  &__item {
+    display: block;
+  }
+}
 </style>

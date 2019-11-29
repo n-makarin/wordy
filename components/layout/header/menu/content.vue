@@ -37,6 +37,9 @@ export default {
   right: 0;
   width: 200px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-left: 1px solid rgb(182, 182, 182);
 }
 </style>
