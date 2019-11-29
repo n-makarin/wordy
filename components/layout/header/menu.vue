@@ -41,6 +41,11 @@ export default {
     return {
       opened: false
     }
+  },
+  watch: {
+    $route (newValue) {
+      this.opened = false
+    }
   }
 }
 </script>
