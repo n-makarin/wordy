@@ -1,0 +1,29 @@
+.scroll-prevent {
+  overflow: hidden;
+}
+
+.pr17 {
+  @include pr17;
+}
+.pr16 {
+  @include pr16;
+}
+.pr15 {
+  @include pr15;
+}
+
+body.scroll-prevent.pr17 {
+  .header__content {
+    @include pr17;
+  }
+}
+body.scroll-prevent.pr16 {
+  .header__content {
+    @include pr16;
+  }
+}
+body.scroll-prevent.pr15 {
+  .header__content {
+    @include pr15;
+  }
+}
