@@ -1,6 +1,6 @@
 <template>
   <div @click="$emit('change')" class="icon-trigger">
-    icon
+    menu
   </div>
 </template>
 
@@ -21,4 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.icon-trigger {
+  cursor: pointer;
+}
 </style>

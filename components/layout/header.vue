@@ -1,5 +1,8 @@
 <template>
   <header ref="container" class="header">
+    <nuxt-link to="sets">
+      sets
+    </nuxt-link>
     <logo />
     <Menu v-if="authorized" :offset-top="containerHeight" />
   </header>
