@@ -45,6 +45,14 @@ export default {
   watch: {
     $route (newValue) {
       this.opened = false
+    },
+    opened (newValue) {
+      const scrollPrevent = 'scroll-prevent'
+      if (newValue) {
+        document.body.classList.add(scrollPrevent)
+      } else {
+        document.body.classList.remove(scrollPrevent)
+      }
     }
   }
 }
