@@ -63,9 +63,18 @@ export default {
       }
     }
   },
-  beforeCreate () {
-    if (this.scrollWidth) { return }
-    this.$store.dispatch('layout/setScrollWidth')
+  created () {
+    this.setScrollWidth()
+  },
+  methods: {
+    /**
+     * Set browser scroll width
+     * @returns void
+     */
+    setScrollWidth () {
+      if (this.scrollWidth) { return }
+      this.$store.dispatch('layout/setScrollWidth')
+    }
   }
 }
 </script>
