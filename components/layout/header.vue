@@ -23,12 +23,14 @@ export default {
   },
   data () {
     return {
-      height: 35
     }
   },
   computed: {
     authorized () {
       return this.$store.getters['auth/authorized']
+    },
+    height () {
+      return this.$store.getters['layout/headerHeigh']
     }
   }
 }

@@ -1,5 +1,6 @@
 export const state = () => ({
-  scrollWidth: 0
+  scrollWidth: 0,
+  headerHeigh: 35
 })
 
 export const mutations = {
@@ -28,5 +29,6 @@ export const actions = {
 }
 
 export const getters = {
-  scrollWidth: state => state.scrollWidth
+  scrollWidth: state => state.scrollWidth,
+  headerHeigh: state => state.headerHeigh
 }
