@@ -6,7 +6,7 @@
       <locale />
       <auth />
     </Content>
-    <overlay />
+    <overlay :visible="opened" :offset-top="offsetTop" />
   </div>
 </template>
 

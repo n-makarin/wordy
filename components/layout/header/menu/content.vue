@@ -41,5 +41,7 @@ export default {
   flex-direction: column;
   align-items: center;
   border-left: 1px solid rgb(182, 182, 182);
+  z-index: 1010;
+  background: white;
 }
 </style>
