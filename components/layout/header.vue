@@ -1,10 +1,13 @@
 <template>
-  <header ref="container" class="header">
-    <nuxt-link to="sets">
-      sets
-    </nuxt-link>
-    <logo />
-    <Menu v-if="authorized" :offset-top="containerHeight" />
+  <header class="header">
+    <div :style="{ paddingTop: `${height}px` }" class="header__offset" />
+    <div :style="{ height: `${height}px` }" class="header__content">
+      <nuxt-link to="sets">
+        sets
+      </nuxt-link>
+      <logo />
+      <Menu v-if="authorized" :offset-top="height" />
+    </div>
   </header>
 </template>
 
@@ -20,26 +23,29 @@ export default {
   },
   data () {
     return {
-      containerHeight: 0
+      height: 35
     }
   },
   computed: {
     authorized () {
       return this.$store.getters['auth/authorized']
     }
-  },
-  mounted () {
-    this.containerHeight = this.$refs.container.offsetHeight
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 1px solid rgb(197, 197, 197);
-  padding: 7px 0;
+  &__content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    padding: 7px 0;
+  }
 }
 </style>
