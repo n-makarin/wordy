@@ -46,6 +46,9 @@ export default {
     scrollWidth () {
       return this.$store.getters['layout/scrollWidth']
     },
+    /**
+     * ClassName corresponding browser scroll width
+     */
     offsetRightClassName () {
       return `pr${this.scrollWidth}`
     }
@@ -54,13 +57,10 @@ export default {
     $route (newValue) {
       this.opened = false
     },
-    opened (newValue) {
-      const scrollPrevent = 'scroll-prevent'
-      if (newValue) {
-        document.body.classList.add(scrollPrevent, this.offsetRightClassName)
-      } else {
-        document.body.classList.remove(scrollPrevent, this.offsetRightClassName)
-      }
+    async opened (newValue) {
+      const hasScroll = await this.$store.dispatch('layout/hasScroll', 'x')
+      if (!hasScroll) { return }
+      this.setPageOffset(newValue)
     }
   },
   created () {
@@ -74,7 +74,19 @@ export default {
     setScrollWidth () {
       if (this.scrollWidth) { return }
       this.$store.dispatch('layout/setScrollWidth')
+    },
+    /**
+     * Set / remove offset equals browser scroll width
+     */
+    setPageOffset (newValue) {
+      const scrollPrevent = 'scroll-prevent'
+      if (newValue) {
+        document.body.classList.add(scrollPrevent, this.offsetRightClassName)
+      } else {
+        document.body.classList.remove(scrollPrevent, this.offsetRightClassName)
+      }
     }
+
   }
 }
 </script>
