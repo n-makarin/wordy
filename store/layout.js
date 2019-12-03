@@ -10,6 +10,10 @@ export const mutations = {
 }
 
 export const actions = {
+  /**
+   * Calculate and set to store browser scroll width
+   * @returns void
+   */
   setScrollWidth ({ commit }) {
     if (process.server) { return }
     const scrollId = 'scroll-identifier'
@@ -25,6 +29,26 @@ export const actions = {
     scrollWidth = div.offsetWidth - div.clientWidth
     div.remove()
     commit('SET_SCROLL_WIDTH', scrollWidth)
+  },
+  /**
+   * Check is current page has scroll
+   * @param {string} axis Axis type, x or y
+   * @returns Promise<boolean> | void
+   */
+  async hasScroll (axis) {
+    if (process.server) { return }
+    let size
+    if (axis === 'x') {
+      size = 'Width'
+    } else if (axis === 'y') {
+      size = 'Height'
+    }
+    const d = document
+    const b = d.body
+    const e = d.documentElement
+    const c = 'client' + size
+    size = 'scroll' + size
+    return await /CSS/.test(d.compatMode) ? (e[c] < e[axis]) : (b[c] < b[axis])
   }
 }
 
